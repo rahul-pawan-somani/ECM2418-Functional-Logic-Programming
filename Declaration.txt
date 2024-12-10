@@ -1,0 +1,296 @@
+GENAI STUDEN DECLARATION
+
+I have used GenAI tools for developing ideas.
+I have used GenAI tools to assist with research or gathering information.
+I have used GenAI tools to help me understand key theories and concepts.
+I have used GenAI tools to suggest a plan or structure for my assessment.
+I have used GenAI tools to proofread and correct grammar or spelling errors.
+
+
+The outputs from prompts given to ChatGPT were adapted as following:
+- Prompt 1 was followed until week 3, was not able to work on the assignment in week 4 due to time management issues.
+- Prompt 2 helped in in testing all the functions with x_warmup, x_generator & x_selector and let me debug my code
+- Prompt 3 helped me decide the range of age for the eight friends
+- Prompt 4 helped me decide the best method to check if an integer is part of a list or not
+- Prompt 5 helped in understanding question 3 in more clear manner
+- Prompt 6 was used as a last resort cause I was incapable in making the selector4 function accurately
+
+Below is the list of prompts I put into ChatGPT and the outputs I received:
+Prompt 1:
+go through this document and make a plan for me to work on this in such a way that I can finish working on this coursework by 17th November; space it out evenly in a weekly plan
+Output:
+Here's a weekly plan for completing the coursework on time by 17th November. The coursework has four main questions, each with sub-parts. We'll evenly distribute the workload across five weeks, leaving a buffer week for review and refinement.
+---
+### **Week 1 (17th–23rd October)**
+**Goal:** Complete Question 1 (Gill's Primes)
+1. **17th-18th Oct:** Understand the problem and Haskell functions required. Work on Question 1.1 (warm-up function `number`).
+2. **19th-20th Oct:** Implement and test Question 1.2 (`generator1` function).
+3. **21st-23rd Oct:** Implement and test Question 1.3 (`selector1` function). Debug and ensure it passes tests.
+---
+### **Week 2 (24th–30th October)**
+**Goal:** Complete Question 2 (Common Names)
+1. **24th-25th Oct:** Understand the problem and functions required. Work on Question 2.1 (warm-up function `digits`).
+2. **26th-27th Oct:** Implement and test Question 2.2 (`generator2` function).
+3. **28th-30th Oct:** Implement and test Question 2.3 (`selector2` function). Debug and verify outputs.
+---
+### **Week 3 (31st October–6th November)**
+**Goal:** Complete Question 3 (Bilateral Symmetry)
+1. **31st Oct-1st Nov:** Understand the problem and Prolog predicates required. Work on Question 3.1 (warm-up predicate `number`).
+2. **2nd-3rd Nov:** Implement and test Question 3.2 (`generator3` predicate).
+3. **4th-6th Nov:** Implement and test Question 3.3 (`selector3` predicate). Debug and confirm correctness.
+---
+### **Week 4 (7th–13th November)**
+**Goal:** Complete Question 4 (In His Prime)
+1. **7th-8th Nov:** Understand the problem and Prolog predicates required. Work on Question 4.1 (warm-up predicate `mondays`).
+2. **9th-10th Nov:** Implement and test Question 4.2 (`generator4` predicate).
+3. **11th-13th Nov:** Implement and test Question 4.3 (`selector4` predicate). Debug and ensure outputs match expectations.
+---
+### **Week 5 (14th–16th November)**
+**Goal:** Finalize and Review
+1. **14th Nov:** Prepare `Declaration.txt` detailing the use of tools (if applicable).
+2. **15th Nov:** Review and polish all `.hs` and `.pl` files for syntax, comments, and logical flow.
+3. **16th Nov:** Create a `.zip` file containing all required files. Perform a final test for each program using the provided online platforms.
+---
+### **Submission (17th November)**
+**Goal:** Submit coursework before the deadline (12:00 noon).
+- Submit the `.zip` file via the ELE system.
+---
+This plan gives you a steady and manageable pace while providing enough time for debugging and refinement
+
+Prompt 2:
+how do I have multiple print lines in a haskell main function
+Output:
+In Haskell, you can use the `do` block in the `main` function to have multiple `print` or `putStrLn` lines. Here's a small example:
+```haskell
+main :: IO ()
+main = do
+    putStrLn "This is the first line."
+    putStrLn "This is the second line."
+```
+### Explanation:
+- The `do` block allows sequencing of IO actions.
+- Each `putStrLn` outputs a line of text to the console.
+When you run this program, it will output:
+```
+This is the first line.
+This is the second line.
+```
+
+Prompt 3:
+give me the range of 2 digit numbers that have 3 digit squares
+Output:
+To find the range of 2-digit numbers whose squares are 3-digit numbers:
+
+1. **A 3-digit number** is in the range \(100 \leq n^2 \leq 999\).
+2. Take the square root of the bounds:
+   - \(\sqrt{100} = 10\)
+   - \(\sqrt{999} \approx 31.6\)
+Thus, the range of numbers is \(10 \leq n \leq 31\).
+### Result
+The 2-digit numbers whose squares are 3-digit numbers are:
+\[
+10, 11, 12, \dots, 31
+\]
+
+Prompt 4:
+how to check in Hakell if an integer is not part of a list that can only have integers in t
+Output:
+In Haskell, you can check if an integer is not part of a list of integers using the `notElem` function or by negating the result of the `elem` function.
+### Example with `notElem`
+```haskell
+isNotInList :: Int -> [Int] -> Bool
+isNotInList x xs = notElem x xs
+```
+### Example with `elem` and negation
+```haskell
+isNotInList :: Int -> [Int] -> Bool
+isNotInList x xs = not (elem x xs)
+```
+### Usage
+```haskell
+main :: IO ()
+main = do
+    let myList = [1, 2, 3, 4, 5]
+    print (isNotInList 6 myList) -- True
+    print (isNotInList 3 myList) -- False
+```
+### Explanation
+- `elem x xs` checks if `x` is in the list `xs`.
+- `notElem x xs` is a more concise way to express `not (elem x xs)`.
+If the list is guaranteed to contain only integers, this approach will work perfectly since `elem` and `notElem` are designed to work with any type that is an instance of the `Eq` class, which includes `Int`.
+
+Prompt 5:
+have a look question 3 in this file, dumb it down and explain how the solution 40699604 is reached in detail
+Output:
+The solution to Question 3 of the uploaded coursework document involves finding a palindromic product and follows a logical sequence:
+### Problem Overview:
+You need to find the smallest product of two numbers \( A \) and \( B \) such that:
+1. The product \( A \times B \) is a palindrome starting with "4."
+2. The last digit of the smaller number \( B \) is "3."
+3. When \( A \) and \( B \) are added instead of multiplied, and then 100 is added to their sum, the result is also a palindrome.
+The solution is \( 40699604 \), which results from multiplying \( 1769548 \times 23 \). Here's how this is derived step by step:
+---
+### Step-by-Step Explanation:
+#### Step 1: Define a palindrome
+A **palindrome** is a number that reads the same forwards and backward. For example, \( 43122134 \) is a palindrome.
+#### Step 2: Constraints for the numbers
+- \( A \): A larger number starting from digits that help achieve a palindrome when multiplied.
+- \( B \): A smaller number, ending with \( 3 \) (as per the constraint in the problem).
+- The product \( A \times B \) should:
+  - Start with "4."
+  - Be a palindrome.
+#### Step 3: Generate possible \( B \)
+Since \( B \) must end with \( 3 \) and be relatively small, we generate potential values for \( B \):
+\[
+B = 3, 13, 23, 33, \ldots
+\]
+Starting with small \( B \) helps to find the smallest product quickly.
+#### Step 4: Generate possible \( A \)
+\( A \) must pair with \( B \) to produce a palindrome starting with "4." Its size depends on \( B \) and the target palindrome structure. Potential \( A \) values are tested against the multiplication condition.
+#### Step 5: Check multiplication condition
+For each pair \( (A, B) \), compute \( A \times B \) and check if the result:
+1. Is a palindrome.
+2. Starts with the digit "4."
+#### Step 6: Check the addition condition
+If \( A \times B \) satisfies the multiplication condition, compute \( A + B + 100 \) and check if the result is a palindrome. Only pairs that meet this condition are valid solutions.
+#### Step 7: Identify the smallest \( A \times B \)
+The smallest product \( A \times B \) meeting both conditions is \( 40699604 \), which results from:
+\[
+A = 1769548, \quad B = 23
+\]
+---
+### Verification:
+1. **Palindrome Check for \( A \times B \):**
+   \[
+   1769548 \times 23 = 40699604
+   \]
+   \( 40699604 \) is a palindrome.
+2. **Palindrome Check for \( A + B + 100 \):**
+   \[
+   A + B + 100 = 1769548 + 23 + 100 = 1769671
+   \]
+   \( 1769671 \) is a palindrome.
+Thus, \( A = 1769548 \) and \( B = 23 \) provide the correct solution.
+---
+By systematically testing and filtering through these steps, you can arrive at the correct answer.
+
+Prompt 6:
+solve question 4.3 from this file using rules used by SWISH SWI Prolog
+Output:
+To solve Question 4.3 using SWI-Prolog for the "In His Prime" teaser, we need to write a Prolog predicate, `selector4`, that validates pairs of month and start day combinations against the constraints given.
+
+Here’s how the logic for the `selector4` predicate can be constructed:
+
+### Key Requirements
+1. Each pair ([M1, D1, S1], [M2, D2, S2]) corresponds to:
+   - `M1` and `M2`: months (1–12).
+   - `D1` and `D2`: days in the month (28–31).
+   - `S1` and `S2`: start days (1–7, representing weekdays).
+
+2. Derive values:
+   - `T1` = `D1`, `U1` = `D2`.
+   - `T2` = number of letters in the spelling of `M1`, `U2` = number of letters in the spelling of `M2`.
+   - `T3` = number of prime days in `M1`, `U3` = number of prime days in `M2`.
+   - `T4` = number of Mondays in `D1` days starting at `S1`, `U4` = number of Mondays in `D2` days starting at `S2`.
+   - `T5` = number of prime Saturdays in `D1` days starting at `S1`, `U5` = number of prime Saturdays in `D2` days starting at `S2`.
+
+3. Constraints:
+   - No pairs `(Ti, Ui)` are the same.
+   - The sums `T1 + T2 + T3 + T4 + T5` and `U1 + U2 + U3 + U4 + U5` are both prime numbers.
+
+### Prolog Implementation
+Below is the Prolog implementation for the `selector4` predicate:
+
+```prolog
+% Helper predicate to determine if a number is prime
+is_prime(2).  % Base case: 2 is prime
+is_prime(N) :-
+    N > 2,
+    Limit is floor(sqrt(N)),  % Calculate the square root of N
+    \+ has_divisor(N, 2, Limit).  % Check that no divisor exists in the range
+
+% Helper predicate to find a divisor in the range
+has_divisor(N, Divisor, Limit) :-
+    Divisor =< Limit,
+    N mod Divisor =:= 0.
+has_divisor(N, Divisor, Limit) :-
+    Divisor =< Limit,
+    NextDivisor is Divisor + 1,
+    has_divisor(N, NextDivisor, Limit).
+
+% Count number of prime days in a month
+prime_days(DaysInMonth, Count) :-
+    integer(DaysInMonth),  % Ensure DaysInMonth is an integer
+    DaysInMonth > 0,
+    findall(Day, (
+        between(1, DaysInMonth, Day),
+        is_prime(Day)
+    ), PrimeDays),
+    length(PrimeDays, Count).
+
+% Count number of prime Saturdays in a month
+prime_saturdays(DaysInMonth, StartDay, Count) :-
+    integer(DaysInMonth), integer(StartDay),  % Ensure inputs are integers
+    DaysInMonth > 0, StartDay > 0,
+    findall(Day, (
+        between(1, DaysInMonth, Day),
+        (Day + StartDay - 2) mod 7 =:= 5,  % Saturday aligns with modulo 5
+        is_prime(Day)
+    ), PrimeSaturdays),
+    length(PrimeSaturdays, Count).
+
+% Map month number to the number of letters in its name
+month_letters(1, 7).  % January
+month_letters(2, 8).  % February
+month_letters(3, 5).  % March
+month_letters(4, 5).  % April
+month_letters(5, 3).  % May
+month_letters(6, 4).  % June
+month_letters(7, 4).  % July
+month_letters(8, 6).  % August
+month_letters(9, 9).  % September
+month_letters(10, 7). % October
+month_letters(11, 8). % November
+month_letters(12, 8). % December
+
+% Selector predicate
+selector4([[M1, D1, S1], [M2, D2, S2]]) :-
+    % First month values
+    T1 = D1,
+    month_letters(M1, T2),
+    prime_days(D1, T3),
+    mondays(D1, S1, Mondays1),
+    length(Mondays1, T4),
+    prime_saturdays(D1, S1, T5),
+
+    % Second month values
+    U1 = D2,
+    month_letters(M2, U2),
+    prime_days(D2, U3),
+    mondays(D2, S2, Mondays2),
+    length(Mondays2, U4),
+    prime_saturdays(D2, S2, U5),
+
+    % Debug values
+    writeln('First Month:'),
+    writeln([T1, T2, T3, T4, T5]),
+    writeln('Second Month:'),
+    writeln([U1, U2, U3, U4, U5]),
+
+    % Check uniqueness explicitly
+    writeln('Uniqueness condition:'),
+    writeln([T1, T2, T3, T4, T5]),
+    writeln([U1, U2, U3, U4, U5]),
+    \+ (member(X, [T1, T2, T3, T4, T5]), member(X, [U1, U2, U3, U4, U5])),
+    writeln('Uniqueness passed.'),
+
+    % Check sums
+    Sum1 is T1 + T2 + T3 + T4 + T5,
+    Sum2 is U1 + U2 + U3 + U4 + U5,
+    writeln(sum1=Sum1),
+    writeln(sum2=Sum2),
+    is_prime(Sum1),
+    is_prime(Sum2),
+    writeln('Prime sums passed.').
+```
+This code should be run in SWISH SWI-Prolog or any other Prolog environment to validate the outputs.
